@@ -84,6 +84,7 @@ We thus compiled a dataset containing only the glycoprotein (GP) sequences seque
 These sequences were analyzed in BEAST \cite{drummond2012} to find out when the lineage that caused the outbreak in Guinea split from other EBOV lineages.
 The data were analyzed using a GTR+$\Gamma$ nucleotide substitution model, and either an uncorrelated relaxed (following a lognormal distribution) \cite{drummond2006} or a strict molecular clock and under different demographic models (constant population size, exponential growth or the non-parametric Bayesian skyride \cite{minin2008}).
 This dataset was found to be quite robust to different demographic models, but more uncertainty in inferred node dates was noticed when using a strict molecular clock.
+We use the results from a relaxed molecular clock analysis, under an exponential growth tree prior (as it can accomodate a constant population size scenario when the growth rate is 0).
 
 \section*{Analysis}
 An alignment of complete genomes and a maximum likelihood tree (PhyML) confirms the phylogenetic position shown in the NEJM paper (Figure \ref{NEJMtree}).
@@ -147,7 +148,9 @@ The Bayesian posterior support for all the groupings between the outbreaks are 1
 \label{MBtreePath}
 \end{figure}
 
-
+The analysis of GP sequences in BEAST revealed rooting consistent with that found in Figure \ref{MBtreePath} as well as a nucleotide substitution rate (mean of lognormal distribution from which rates were drawn $1.073\times10^{-3}$, 95\% HPD interval $5.9891\times10^{-4}$ -- $1.7494\times10^{-3}$) on a scale expected, given previously published rates \cite{carroll2013} and the fact that GP codes for a surface glycoprotein.
+The estimate of the split between the lineage now causing an outbreak in Guinea and the Central African lineage that had caused outbreaks in DRC and Gabon is around 2002 November (95\% HPD interval 2000 March -- 2006 February).
+This gives us a lower boundary on the introduction of DRC/Gabon lineage of EBOV into Guinea.
 
 \section*{Conclusion}
 Our analyses indicate that the outbreak in Guinea is likely caused by a Zaire ebolavirus lineage that has spread from Central Africa into Guinea and West Africa, not a divergent endemic lineage.

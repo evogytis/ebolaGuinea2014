@@ -16,6 +16,11 @@ ebolaGuinea2014.pdf
 *.log
 *.bbl
 *.blg
+*.out
+*.tmp
+*.tui
+*.tuo
+*.mp
 
 # Packages #
 ############
