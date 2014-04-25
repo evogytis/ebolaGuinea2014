@@ -68,7 +68,7 @@
 
 \section*{Introduction}
 %\begin{abstract}
-A recent article \cite{baize2014} suggests that the currently ongoing outbreak in Guinea is caused by a divergent variant of the Zaire ebola (EBOV) lineage. The EBOV strain has previously caused ebola outbreaks in the Democratic Republic of Congo (DRC) and Gabon. The authors publish three complete genome sequences from the Guinea outbreak and perform a phylogenetic analysis using 24 sequences of Zaire and other representative lineages. One finding of this is that the 2014 sequences fall as a divergent lineage outside the Zaire lineage suggesting that this may be a pre-existing endemic virus in West Africa rather than the result of spread of the EBOV lineage from the Central African countries that have had previous human outbreaks.
+A recent article \cite{baize2014} suggests that the currently ongoing outbreak in Guinea is caused by a divergent variant of the Zaire ebola (EBOV) lineage. The EBOV strain has previously caused ebola outbreaks in the Democratic Republic of Congo (DRC), the Republic of Congo (RC) and Gabon. The authors publish three complete genome sequences from the Guinea outbreak and perform a phylogenetic analysis using 24 sequences of Zaire and other representative lineages. One finding is that the 2014 sequences fall as a divergent lineage outside the Zaire lineage suggesting that this may be a pre-existing endemic virus in West Africa rather than the result of spread of the EBOV lineage from the Central African countries that have had previous human outbreaks. 
 %\end{abstract}
 
 \section*{Materials and methods}
@@ -76,38 +76,34 @@ All complete genome sequences from the genus Ebolavirus (which includes Bundibug
 Genbank accessions and sources for the sequences can be found at \url{http://epidemic.bio.ed.ac.uk/ebolavirus_sequences} .
 We would like to thank Stephan G\"{u}nther and his co-authors for sending us the sequences from the Guinea outbreak. 
 
-We extracted the coding sequences of each gene. 
-The Ebolavirus genome consists of a single strand of negative sense single stranded RNA and contains 7 protein coding genes (in order 3'-NP-VP35-VP40-GP-VP30-VP24-L, separated by various intergenic regions) \cite{sanchez1993}.
-Two alignments were concatenated derived from coding and non-coding regions of the genomes.
-Trees were analyzed in PhyML \cite{guindon2003} or MrBayes \cite{huelsenbeck2001} using GTR (\tbc{?}) \cite{miura1986} substitution model.
+The Ebolavirus genome consists of a single strand of negative sense single stranded RNA and contains 7 protein coding genes (in order 3'-NP-VP35-VP40-GP-VP30-VP24-L, separated by various intergenic regions) \cite{sanchez1993}. We collated the protein coding regions of each gene and, in a separate alignment, the non-coding intergenic regions. Phylogenetic trees were inferred in PhyML \cite{guindon2003} or MrBayes \cite{huelsenbeck2001} using GTR (\tbc{?}) \cite{miura1986} substitution model. %%AR - usual reference for GTR is Tavaré S (1986). "Some Probabilistic and Statistical Problems in the Analysis of DNA Sequences". Lectures on Mathematics in the Life Sciences (American Mathematical Society) 17: 57–86. 
 
-When analyzed in BEAST \cite{drummond2012} the complete genome sequences gave inconsistent results and BEAST appeared to be sampling from a bimodal posterior distribution.
-We thus compiled a dataset containing only the glycoprotein (GP) sequences, for which more sequences are available.
-Many of the extra sequences came from wild ape carcasses \cite{wittmann2007} in Gabon and DRC.
-These sequences were analyzed in BEAST \cite{drummond2012} to find out when the lineage that caused the outbreak in Guinea split from other EBOV lineages.
-The data were analyzed using a GTR+$\Gamma$ nucleotide substitution model, and either an uncorrelated relaxed (following a lognormal distribution) \cite{drummond2006} or a strict molecular clock and under different demographic models (constant population size, exponential growth or the non-parametric Bayesian skyride \cite{minin2008}).
-This dataset was found to be quite robust to different demographic models, but more uncertainty in inferred node dates was noticed when using a strict molecular clock.
-We use the results from a relaxed molecular clock analysis, under an exponential growth tree prior (as it can accomodate a constant population size scenario when the growth rate is 0).
+We also compiled a dataset containing only the glycoprotein (GP) sequences, for which more sequences are available.
+Many of the extra sequences come from wild ape carcasses \cite{wittmann2007} in Gabon and RC.
+These sequences were analyzed in BEAST \cite{drummond2012} to establish a time frame for the split of the Guinea viruses from other EBOV lineages.
+The data were analyzed using a GTR+$\Gamma$ nucleotide substitution model,  an uncorrelated relaxed molecular clock (following a lognormal distribution) \cite{drummond2006} and under different demographic models (constant population size, exponential growth or the non-parametric Bayesian skyride \cite{minin2008}).
+We present here the results from a relaxed molecular clock analysis, under an exponential growth tree prior (as it can accomodate a constant population size scenario when the growth rate is 0) but the analysis was found to be quite robust to different demographic models.
 
 \section*{Analysis}
-An alignment of complete genomes and a maximum likelihood tree (PhyML) confirms the phylogenetic position shown in the recent paper \cite{baize2014} (Figure \ref{NEJMtree}).
+An alignment of complete genomes and a maximum likelihood tree (PhyML) appears to confirm the phylogenetic position shown in the recent paper \cite{baize2014} (Figure \ref{NEJMtree}).
 \begin{figure}[h!]
 \centering  
 \includegraphics[width=1\textwidth]  {figures/ebolavirus_raw_ml_tree.png}
 \caption{\textbf{ML tree of complete genomes.}
-Replicated analysis from Baize \textit{et al}. \cite{baize2014} identifies the Guinea outbreak sequences (highlighted) as belonging to a divergent EBOV lineage.
+Replicated analysis from Baize \textit{et al}. \cite{baize2014} suggests the Guinea outbreak sequences (highlighted) as belonging to a divergent EBOV lineage.
 Tips belonging to EBOV lineage are not collapsed.}
 \label{NEJMtree}
 \end{figure}
 
 When the intergenic sequences are removed, however, the Guinea outbreak sequences fall within the diversity of Zaire ebolavirus (Figure \ref{MBtreeCDS}).
-We suspect the discrepancy between our results and those of Baize \textit{et al}. \cite{baize2014} arose through long branch attraction.
-EBOV lineages are rather poorly sampled and sequences from most outbreaks, because of the nature of the outbreaks, have nearly identical sequences.
+EBOV lineages are rather poorly sampled and sequences from most outbreaks, because of the nature of the outbreaks, have nearly identical sequences. 
+The branch leading to the Guinea outbreak is long, not because it is a divergent lineage but because it is the most recently sampled so has had the most time to evolve.
+Combined with a very divergent outgroup this leads to a situation where the root position of the EBOV clade is unreliably estimated.
 
 \begin{figure}[h!]
 \centering  
 \includegraphics[width=1\textwidth]  {figures/ebolavirus_cds_mb_tree.png}
-\caption{\textbf{MrBayes tree of concatenated coding sequences.}
+\caption{\textbf{MrBayes tree of concatenated coding sequences.}	
 When only the coding sequences are used, the Guinea outbreak sequences appear to be derived from within the diversity of Gabon/DRC EBOV lineages.}
 \label{MBtreeCDS}
 \end{figure}
@@ -156,24 +152,24 @@ The Bayesian posterior support for all the groupings between the outbreaks are 1
 \end{figure}
 
 \section*{Estimating the date of introduction of EBOV into Guinea}
-The analysis of GP sequences in BEAST revealed rooting consistent with that found in Figure \ref{MBtreePath} as well as a nucleotide substitution rate (mean of lognormal distribution from which rates were drawn is $1.073\times10^{-3}$, 95\% HPD interval $5.9891\times10^{-4}$ -- $1.7494\times10^{-3}$) on a scale expected, given previously published rates \cite{carroll2013} and the fact that GP codes for a surface glycoprotein.
+The analysis of GP sequences in BEAST revealed rooting consistent with that found in Figure \ref{MBtreePath} as well as a nucleotide substitution rate (mean of lognormal distribution from which rates were drawn is $1.07\times10^{-3}$, 95\% HPD interval $5.991\times10^{-4}$ -- $1.75\times10^{-3}$) on a scale expected, given previously published rates \cite{carroll2013} and the fact that GP codes for a surface glycoprotein.
 In Figure \ref{beastTree} the estimate of the split between the lineage now causing an outbreak in Guinea and the Central African lineage that had caused outbreaks in DRC and Gabon is around 2002 November (95\% HPD interval 2000 March -- 2006 February).
-This gives us a lower boundary on the introduction of DRC/Gabon lineage of EBOV into Guinea, although these estimates should be interpreted with caution.
+This gives us a lower boundary on the introduction of Central African lineage of EBOV into Guinea, although these estimates should be interpreted with caution.
 We also find very good support for the common ancestry of Guinea and DRC/Gabon lineages (posterior probability = 1.0).
 Figure \ref{beastTree} also highlights the importance of environmental sampling - many sequences in the tree come from ape carcasses and are more diverse (not shown) than sequences from human outbreaks, giving this dataset much better resolution.
 
 \begin{figure}[h!]
 \centering  
-\includegraphics[width=1\textwidth]  {figures/EBOV_GP_46_GTRG_UCLN_EGC_MCC_tree.pdf}
+\includegraphics[width=1\textwidth]  {figures/EBOV_GP_46_GTRG_UCLN_EGC_MCC_tree.png}
 \caption{\textbf{Maximum clade credibility tree of GP sequences.}
 Although the closest relatives of the Guinea lineage are not entirely certain (posterior probability 0.92), its relationship with Central African EBOV lineages is well-supported (posterior probability 1.0).}
 \label{beastTree}
 \end{figure}
 
 \section*{Conclusion}
-Overall, our analyses only marginally improve upon those of Baize \textit{et al}. \cite{baize2014}, due to paucity of sequence data. 
-We find that at this time no suitable outgroup sequences to root the EBOV phylogeny exist and that temporal rooting gives the most consistent results.
-Our analyses also indicate that the outbreak in Guinea is likely caused by a Zaire ebolavirus lineage that has spread from Central Africa into Guinea and West Africa, not a divergent endemic lineage.
+The phylogenetic analysis of the five ebolavirus species here does not substantially improve on that presented by Baize \textit{et al}. \cite{baize2014} in that even when partitioning the alignment in to coding and non-coding regions we get inconsistent rooting positions for the EBOV clade.  
+We believe that at present no suitable outgroup sequences to root the EBOV phylogeny exist and that a temporal rooting gives the most consistent results.
+This approach indicates that the outbreak in Guinea is likely caused by a Zaire ebolavirus lineage that has spread from Central Africa into Guinea and West Africa in recent decades, and does not represent the emergence of a divergent and endemic virus.
 As the GP sequences show, without more diverse sequences, especially those from the animal reservoir, it is difficult to narrow down the estimates of when and through what means the Central African EBOV lineage has been introduced into West Africa.
 
 \section*{Acknowledgements}
